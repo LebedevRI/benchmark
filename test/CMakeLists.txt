@@ -140,6 +140,8 @@ add_test(user_counters_thousands_test user_counters_thousands_test --benchmark_m
 compile_output_test(memory_manager_test)
 add_test(memory_manager_test memory_manager_test --benchmark_min_time=0.01)
 
+compile_benchmark_test_with_main(llvm-cmov-bench)
+
 check_cxx_compiler_flag(-std=c++03 BENCHMARK_HAS_CXX03_FLAG)
 if (BENCHMARK_HAS_CXX03_FLAG)
   compile_benchmark_test(cxx03_test)
